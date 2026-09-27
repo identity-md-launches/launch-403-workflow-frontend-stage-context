@@ -1,0 +1,29 @@
+{
+  "findings": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 800,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "violations": []
+    }
+  ],
+  "checks": [
+    "keyboard",
+    "four widths",
+    "200% text enlargement",
+    "RTL reflow stress",
+    "reduced motion",
+    "font loaded"
+  ],
+  "limitation": "Automated checks are not a screen-reader session or browser-native zoom test."
+}

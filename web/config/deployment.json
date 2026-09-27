@@ -1,0 +1,53 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-342-pricebandhook",
+  "version": 1,
+  "launchId": "c45efa2f-90a1-46e8-b974-1ef96ca0621c",
+  "manifest": {
+    "hook": {
+      "contract": "PriceBandHook",
+      "permissions": [
+        "afterInitialize",
+        "afterSwap"
+      ],
+      "constructorArgs": [
+        "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+      ]
+    },
+    "kind": "univ4_hook",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "79228162514264337593543950336",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "Technical description of src/PriceBandHook.sol:PriceBandHook and src/Band.sol:Band for the approved Sepolia native-ETH/BAND pool. The hook constructor's sole argument is the workflow-specified Sepolia PoolManager; Band has no constructor arguments. ABI documentation is in docs/abi/PriceBandHook.json and docs/abi/Band.json. Currency0 is native ETH and currency1 is BAND. initialPrice is decimal sqrtPriceX96 = 2^96, tick 0, or 1 BAND per ETH (both currencies use 18 decimals). The approved brief does not specify an opening price; this value records the deterministic opening price exercised in test/LaunchRehearsal.t.sol. That rehearsal seeds BAND alone below the opening price, then buys into the ETH-less pool and sells. This price selection requires independent manifest review before deployment. The only enabled permissions are afterInitialize and afterSwap (address permission mask 0x1040); all return-delta permissions are disabled. The hook charges no fee and returns zero swap delta. State is independent per PoolId, and any pool may attach the hook. Initialization records the tick and timestamp. The band is inactive until the first UTC hour boundary after initialization. Each swap first accrues the preceding tick over elapsed seconds. The last completed hour's average tick A rounds toward negative infinity; the initialization hour covers only time since initialization, and idle gaps are handled in constant work. The inclusive band is [A - 2231, A + 1823]. A swap is accepted when its final tick is inside the band or strictly closer to it than the previous tick; otherwise PriceOutOfBand reverts the swap. band(PoolId) previews the next swap's band at the current timestamp, lastTick(PoolId) reports the last observed tick, and HourClosed reports only the latest hour closed by a successful swap. hookData is unauthenticated and ignored. Policy and signed artifact linkage are owned by services. Source publication, attestation, admission and deployment follow this contract stage; these notes claim none of those outcomes.",
+    "token": {
+      "name": "Band",
+      "symbol": "BAND",
+      "contract": "Band",
+      "decimals": 18
+    }
+  },
+  "contracts": [
+    {
+      "name": "Band",
+      "txHash": "0x22c6b573b351721ec3719d0a587461e128b1f434809fca529bc57475f2a63db6",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "address": "0xd79607176c790725cac9cb886edca9ccb50a64b8",
+      "blockNumber": 11791710,
+      "creationCodeHash": "66c4f88622130d5a303a94e0acfb04c5a4470b45e30f389e49932827e0b6c615"
+    },
+    {
+      "name": "PriceBandHook",
+      "txHash": "0x22c6b573b351721ec3719d0a587461e128b1f434809fca529bc57475f2a63db6",
+      "abiHash": "39dbd5ffe5d94c293b1efd1fadde66fbbba67ef54b44cd6a74dc5c9615d364d1",
+      "address": "0x21607bf26763cb92dddb2ef4f94549a51ca99040",
+      "blockNumber": 11791710,
+      "creationCodeHash": "205ce3a05225f69e1d2490bea8b8e0750e026c5186a1e8ed579b9cd25d5a1c7f"
+    }
+  ],
+  "sourceCommit": "966128c1f665ea0383c2014af7edbb7dd5d5d9ee",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "91610fd3a552f27520a9ffe45b0ac67606e5b003319c45c43e56c6cb9a2441c2"
+}

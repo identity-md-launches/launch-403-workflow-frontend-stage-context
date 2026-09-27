@@ -1,0 +1,17 @@
+{
+  "workspaceCommitCreated": false,
+  "method": "Clone existing full Git history into disposable test/scratch, copy all nonignored scoped source/export/evidence, commit only in scratch, create and verify bundle --all. Delete rehearsal afterward.",
+  "scopeCheck": "passed; only web/**, dist/**, docs/** and explicitly budgeted web/.gitignore",
+  "gitBundleVerified": true,
+  "candidateBundleBytes": 1539390,
+  "evidenceAllowanceBytes": 131072,
+  "conservativeTotalBytes": 1670462,
+  "limitBytes": 8388608,
+  "note": "The measurement report itself is the only delivered file excluded from the measured snapshot; a 128 KiB allowance covers it and Git metadata variation. The bundle is test scaffolding and is not submitted.",
+  "candidateTrackedFileCount": 188,
+  "candidateRawFileBytes": 3411620,
+  "exportFileCountIncludingManifest": 13,
+  "exportBytesIncludingManifest": 641145,
+  "generatedDependencyOrCacheFiles": 0,
+  "submodules": 0
+}

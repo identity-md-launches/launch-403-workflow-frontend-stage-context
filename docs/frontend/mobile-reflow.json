@@ -1,0 +1,22 @@
+{
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "overflow": false,
+  "prices": [
+    {
+      "text": "50,000,000",
+      "height": 37.421875,
+      "fontSize": "28.8px",
+      "lineHeight": "37.44px"
+    },
+    {
+      "text": "49,999,000",
+      "height": 37.421875,
+      "fontSize": "28.8px",
+      "lineHeight": "37.44px"
+    }
+  ],
+  "testnetVisible": true
+}

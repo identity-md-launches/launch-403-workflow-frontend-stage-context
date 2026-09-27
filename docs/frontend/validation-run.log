@@ -1,0 +1,66 @@
+
+> band-frontend@1.0.0 typecheck
+> tsc --noEmit
+
+
+> band-frontend@1.0.0 build
+> node scripts/prepare.mjs && vite build && node scripts/manifest.mjs
+
+Band: pinned source ABI verified (38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee)
+PriceBandHook: pinned source ABI verified (39dbd5ffe5d94c293b1efd1fadde66fbbba67ef54b44cd6a74dc5c9615d364d1)
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 440 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                                         0.64 kB │ gzip:   0.39 kB
+../dist/assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2   36.93 kB
+../dist/assets/index-B9wGNnSA.css                         16.70 kB │ gzip:   4.10 kB
+../dist/assets/ccip-DF-a5Fxi.js                            2.83 kB │ gzip:   1.30 kB
+../dist/assets/index-Dszmkrgw.js                         540.25 kB │ gzip: 165.45 kB
+
+✓ built in 297ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+Manifest: 12 assets, 636864 bytes; network block preserved verbatim.
+
+> band-frontend@1.0.0 check:export
+> node scripts/check-export.mjs
+
+PASS: exact handoff, network, pinned ABIs, complete SHA-256 inventory, relative export and size limits.
+
+> band-frontend@1.0.0 test
+> playwright test
+
+
+Running 22 tests using 1 worker
+
+(node:133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/app.spec.ts:27:1 › relative export loads all assets, shows live reads disconnected and handles missing wallet (757ms)
+  ✓   2 tests/app.spec.ts:49:1 › wrong network offers switch, adds an unknown chain using exact handoff parameters (772ms)
+  ✓   3 tests/app.spec.ts:73:1 › buy quotes the configured quoter and signs only the simulated band-limited PoolSwapTest call (945ms)
+  ✓   4 tests/app.spec.ts:111:1 › sell approves exactly the entered amount to PoolSwapTest, then previews and swaps with no ETH value (1.1s)
+  ✓   5 tests/app.spec.ts:148:1 › oversized input shows partial fill even when unrestricted quoter would revert (1.1s)
+  ✓   6 tests/app.spec.ts:176:1 › decoded hook reverts and wallet rejections are recoverable and never silently sign (1.1s)
+  ✓   7 tests/app.spec.ts:194:1 › connection rejection is shown with retry (492ms)
+  ✓   8 tests/app.spec.ts:206:1 › invalid precision, zero, insufficient balance and changed inputs block confirmation (810ms)
+  ✓   9 tests/app.spec.ts:234:1 › account and chain events invalidate reviewed fills, disconnect clears balances (820ms)
+  ✓  10 tests/app.spec.ts:262:1 › expired previews cannot sign (729ms)
+  ✓  11 tests/app.spec.ts:280:1 › changed hourly band before signing forces a fresh review (890ms)
+  ✓  12 tests/app.spec.ts:297:1 › inactive first hour requires an explicit price movement limit (668ms)
+  ✓  13 tests/app.spec.ts:316:1 › outside band allows return direction but blocks movement farther out (781ms)
+  ✓  14 tests/app.spec.ts:335:1 › reverted receipt keeps explorer link and reports no completed swap (833ms)
+  ✓  15 tests/app.spec.ts:350:1 › RPC failures recover on refresh, missing code and wrong RPC chain fail closed (766ms)
+  ✓  16 tests/app.spec.ts:372:1 › uninitialized pool and stale block never enable transactions (608ms)
+  ✓  17 tests/app.spec.ts:393:1 › ABI tampering stops runtime initialization (305ms)
+  ✓  18 tests/app.spec.ts:404:1 › responsive reflow, keyboard focus, local font and accessibility audit (4.0s)
+  ✓  19 tests/math.spec.ts:5:1 › TickMath matches independent endpoint and unit-tick vectors (4ms)
+  ✓  20 tests/math.spec.ts:15:1 › limits stop one tick inside, preserve correction from outside, reject outward motion (3ms)
+  ✓  21 tests/math.spec.ts:31:1 › inactive, stricter tolerance, core endpoints and exact input validation (6ms)
+  ✓  22 tests/math.spec.ts:46:1 › packed balance deltas retain signs for both directions (2ms)
+
+  22 passed (19.3s)

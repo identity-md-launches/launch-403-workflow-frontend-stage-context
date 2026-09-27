@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "launchId": "c45efa2f-90a1-46e8-b974-1ef96ca0621c",
+  "chainId": 11155111,
+  "sourceCommit": "966128c1f665ea0383c2014af7edbb7dd5d5d9ee",
+  "attestationHash": "91610fd3a552f27520a9ffe45b0ac67606e5b003319c45c43e56c6cb9a2441c2",
+  "contracts": [
+    {
+      "name": "Band",
+      "address": "0xd79607176c790725cac9cb886edca9ccb50a64b8",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "abiPath": "abi/Band.json"
+    },
+    {
+      "name": "PriceBandHook",
+      "address": "0x21607bf26763cb92dddb2ef4f94549a51ca99040",
+      "abiHash": "39dbd5ffe5d94c293b1efd1fadde66fbbba67ef54b44cd6a74dc5c9615d364d1",
+      "abiPath": "abi/PriceBandHook.json"
+    }
+  ],
+  "assets": [
+    {
+      "path": "DM-Sans-LICENSE.txt",
+      "sha256": "6fbd040a29c2037a765dfb9f2561e9965b5c95c6dcb5dce516089d63d5f17af7"
+    },
+    {
+      "path": "abi/Band.json",
+      "sha256": "9578fcb499b4ba5fac51462a67a2654d9f803e0ea3af9bdb19130ff695808542"
+    },
+    {
+      "path": "abi/PoolSwapTest.json",
+      "sha256": "1345de3eee978bcf0fca8f737f65eb87b42a5a5784cb0e751ac8a2faa8d3afcc"
+    },
+    {
+      "path": "abi/PriceBandHook.json",
+      "sha256": "7f1ad91f89ecf38bf2c18d889f62140110cd7e135f10f4c6d2e6440453fba77d"
+    },
+    {
+      "path": "abi/StateView.json",
+      "sha256": "e800cd8e81c7435f71fa438508cd48c6f6ea951d2d2968c05a58f6c63c609915"
+    },
+    {
+      "path": "abi/V4Quoter.json",
+      "sha256": "1e0890fad92c83e618fd9d88ceedfd05ea5d8b6296ea4dd9d373f54f190f3ed0"
+    },
+    {
+      "path": "assets/ccip-DF-a5Fxi.js",
+      "sha256": "46c3b854f6ed45db002bfa19bf39fb00c1df00639bedc7a657fcd6caea9f9f2a"
+    },
+    {
+      "path": "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+    },
+    {
+      "path": "assets/index-B9wGNnSA.css",
+      "sha256": "5c7e1c8da8054a75d05b0acf82a8c18c9ce87ef79d8ba77f4a5cf1ec43aa65e3"
+    },
+    {
+      "path": "assets/index-Dszmkrgw.js",
+      "sha256": "b4d3671e3a9d259f37b17d46517b8ed37a235d66625a6235478c473b890d2ca9"
+    },
+    {
+      "path": "band.svg",
+      "sha256": "c7bb844cf484a8afcfda6affaa41d6680a677a725f829481ebbf93e59f5203e8"
+    },
+    {
+      "path": "index.html",
+      "sha256": "2b8dd9208f82a8e4ac7776d6917983503fe7c8f48ce075c237d6bb5c77aed2d1"
+    }
+  ],
+  "network": {
+    "chainId": 11155111,
+    "name": "Sepolia",
+    "testnet": true,
+    "rpcUrls": [
+      "https://ethereum-sepolia-rpc.publicnode.com",
+      "https://rpc.sepolia.ethpandaops.io",
+      "https://sepolia.rpc.sentio.xyz"
+    ],
+    "explorer": "https://sepolia.etherscan.io",
+    "nativeCurrency": {
+      "name": "Sepolia Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [
+      "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
+      "https://www.alchemy.com/faucets/ethereum-sepolia"
+    ],
+    "uniswapV4": {
+      "poolManager": "0xe03a1074c86cfedd5c142c4f04f1a1536e203543",
+      "universalRouter": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+      "quoter": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+      "stateView": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+      "positionManager": "0x429ba70129df741b2ca2a85bc3a2a3328e5c09b4",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3"
+    }
+  },
+  "walletAddChain": {
+    "chainId": "0xaa36a7",
+    "chainName": "Sepolia",
+    "rpcUrls": [
+      "https://ethereum-sepolia-rpc.publicnode.com",
+      "https://rpc.sepolia.ethpandaops.io",
+      "https://sepolia.rpc.sentio.xyz"
+    ],
+    "nativeCurrency": {
+      "name": "Sepolia Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "blockExplorerUrls": [
+      "https://sepolia.etherscan.io"
+    ]
+  },
+  "pool": {
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336",
+    "pairedCurrency": "0x0000000000000000000000000000000000000000"
+  },
+  "swapRouter": {
+    "name": "PoolSwapTest",
+    "address": "0x9b6b46e2c869aa39918db7f52f5557fe577b6eee",
+    "abiPath": "abi/PoolSwapTest.json",
+    "source": "Approved workflow: band-aware swaps require sqrtPriceLimitX96 and partial fills."
+  },
+  "infrastructureAbis": {
+    "stateView": "abi/StateView.json",
+    "quoter": "abi/V4Quoter.json"
+  }
+}

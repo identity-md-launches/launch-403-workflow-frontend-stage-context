@@ -1,0 +1,60 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 1060
+  },
+  "overflow": false,
+  "loadedFont": true,
+  "contrast": [
+    {
+      "name": "body text",
+      "foreground": "rgb(87, 100, 82)",
+      "background": "#f4f5ee",
+      "ratio": 5.71,
+      "minimum": 4.5
+    },
+    {
+      "name": "caption on surface",
+      "foreground": "rgb(87, 100, 82)",
+      "background": "#fafbf7",
+      "ratio": 6.03,
+      "minimum": 4.5
+    },
+    {
+      "name": "primary action",
+      "foreground": "rgb(38, 53, 44)",
+      "background": "#d8ef65",
+      "ratio": 10.11,
+      "minimum": 4.5
+    },
+    {
+      "name": "focus on surface",
+      "foreground": "#1c2922",
+      "background": "#fafbf7",
+      "ratio": 14.54,
+      "minimum": 3
+    },
+    {
+      "name": "input border",
+      "foreground": "rgb(114, 124, 108)",
+      "background": "#f4f5ee",
+      "ratio": 3.98,
+      "minimum": 3
+    },
+    {
+      "name": "active status",
+      "foreground": "rgb(52, 94, 58)",
+      "background": "rgb(231, 239, 226)",
+      "ratio": 6.35,
+      "minimum": 4.5
+    },
+    {
+      "name": "error notice",
+      "foreground": "rgb(162, 55, 39)",
+      "background": "rgb(250, 233, 229)",
+      "ratio": 5.74,
+      "minimum": 4.5
+    }
+  ],
+  "note": "Active badge and error notice were measured separately in their actual rendered states. Focus contrast uses the implemented focus token; a focused state was also inspected visually."
+}

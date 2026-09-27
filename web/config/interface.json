@@ -1,0 +1,12 @@
+{
+  "swapRouter": {
+    "name": "PoolSwapTest",
+    "address": "0x9b6b46e2c869aa39918db7f52f5557fe577b6eee",
+    "abiPath": "abi/PoolSwapTest.json",
+    "source": "Approved workflow: band-aware swaps require sqrtPriceLimitX96 and partial fills."
+  },
+  "infrastructureAbis": {
+    "stateView": "abi/StateView.json",
+    "quoter": "abi/V4Quoter.json"
+  }
+}

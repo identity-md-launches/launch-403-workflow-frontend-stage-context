@@ -1,0 +1,6 @@
+{
+  "message": "No browser wallet found. Open this page in an Ethereum wallet browser or install a browser wallet, then retry.",
+  "foreground": "rgb(162, 55, 39)",
+  "background": "rgb(250, 233, 229)",
+  "ratio": 5.74
+}
